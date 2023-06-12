@@ -10,15 +10,28 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+#! Sirve para generar la clave secreta para el proyecto
+from django.core.management.utils import get_random_secret_key
+
+# Para las variables LOGIN
+from django.urls import reverse_lazy
+
+#! Se agrega una cadena de forma aleatoria
+SECRET_KEY = get_random_secret_key()
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# ********************************************************************
+# sys.path es una lista de rutas donde Python busca módulos importados
+# Servirá para poder importar las aplicaciones de la carpeta apps
 import sys
 
 APLICACIONES = BASE_DIR / "apps"
 sys.path.append(str(APLICACIONES))
+# ********************************************************************
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -42,6 +55,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'cliente',
+    'compra',
+    'producto',
 ]
 
 MIDDLEWARE = [
@@ -120,9 +136,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+#! Login
+
+
+LOGIN_URL = reverse_lazy("home:login")
+LOGIN_REDIRECT_URL = reverse_lazy("home:index")
+
+
+#! Media
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"

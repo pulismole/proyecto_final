@@ -1,3 +1,4 @@
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from . import views
 
@@ -8,3 +9,5 @@ urlpatterns = [
     path('crear_categoria/', views.crear_categoria, name='crear_categoria'),
     path('registrar_compra/', views.registrar_compra, name='registrar_compra'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()

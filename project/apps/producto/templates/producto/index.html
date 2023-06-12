@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+
+{% block contenido %}
+
+<h1 class="shadow-lg text-center">Producto</h1>
+<div class="container mt-lg-3">
+    <h3 class="pb-lg-3">
+
+        {% block titulo %}
+            Categorías de Productos
+        {% endblock titulo %}
+    </h3>
+
+    {% block contenido_producto %}
+        <div class="d-grid gap-3">
+            {% if user.is_staff %}
+                <a href="{% url 'producto:productocategoria_create' %}"
+                   class="btn btn-primary">Crear</a>
+            {% endif %}
+            <a href="{% url 'producto:productocategoria_list' %}"
+               class="btn btn-primary">Listar</a>
+            <br>
+        </div>
+        <h3 class="pb-lg-3">Productos</h3>
+        <div class="d-grid gap-3">
+            {% if user.is_staff %}
+                <a href="{% url 'producto:producto_create' %}" class="btn btn-primary">Crear</a>
+            {% endif %}
+            <a href="{% url 'producto:producto_list' %}" class="btn btn-primary">Listar</a>
+            <br>
+        </div>
+    {% endblock contenido_producto %}
+    <div class="d-grid gap-3">
+        <a href="{% url 'home:index' %}" class="btn btn-info">Volver al menú principal</a>
+    </div>
+</div>
+    
+{% endblock contenido %}
