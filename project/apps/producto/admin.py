@@ -27,7 +27,7 @@ class ProductoAdmin(admin.ModelAdmin):
         "nombre",
         "descripcion",
         "categoria",
-        "vencimiento",
+        "fecha_vencimiento",
     )
     list_display_links = ("nombre",)
     search_fields = ("nombre",)

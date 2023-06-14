@@ -12,9 +12,9 @@ class CompraAdmin(admin.ModelAdmin):
         "producto",
         "cantidad",
         "precio_total",
-        "fecha_venta",
+        "fecha_compra",
     )
     list_display_links = ("producto",)
     search_fields = ("producto.nombre", "cliente")
     list_filter = ("cliente",)
-    date_hierarchy = "fecha_venta"
+    date_hierarchy = "fecha_compra"

@@ -21,10 +21,10 @@ class Compra(models.Model):
     producto = models.ForeignKey("producto.Producto", on_delete=models.DO_NOTHING)
     cantidad = models.PositiveIntegerField()
     precio_total = models.DecimalField(max_digits=10, decimal_places=2, editable=False)
-    fecha_venta = models.DateTimeField(default=timezone.now, editable=False)
+    fecha_compra = models.DateTimeField(default=timezone.now, editable=False)
 
     class Meta:
-        ordering = ("-fecha_venta",)
+        ordering = ("-fecha_compra",)
 
     def clean(self):
         if self.cantidad > self.producto.cantidad:

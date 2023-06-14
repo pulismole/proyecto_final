@@ -1,13 +1,13 @@
+from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
+
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('crear_cliente/', views.crear_cliente, name='crear_cliente'),
-    path('crear_producto/', views.crear_producto, name='crear_producto'),
-    path('crear_categoria/', views.crear_categoria, name='crear_categoria'),
-    path('registrar_compra/', views.registrar_compra, name='registrar_compra'),
-]
-
-urlpatterns += staticfiles_urlpatterns()
+    path("", views.index, name="index"),
+    path("login/", LoginView.as_view(template_name="home/login.html"), name="login"),
+    path("logout/", LogoutView.as_view(template_name="home/logout.html"), name="logout"),
+    path("register/", views.register, name="register"),
+    path("about/", views.about, name="about"),
+] + staticfiles_urlpatterns()
