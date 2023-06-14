@@ -1,0 +1,19 @@
+{% extends 'compra/index.html' %}
+
+{% block titulo %}
+    Compra
+{% endblock titulo %}
+
+{% block contenido_compra %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-grid gap-3">
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+    {% url 'compra:index' as url %}
+    {% include 'home/index_back.html' with link=url %}
+
+{% endblock contenido_compra %}

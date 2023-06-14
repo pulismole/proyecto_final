@@ -1,18 +1,19 @@
-{% extends 'producto/index.html' %}
+{% extends 'compra/index.html' %}
 
 {% block titulo %}
-    Eliminar productos
+    Eliminar compras
 {% endblock titulo %}
 
-{% block contenido_producto %}
+{% block contenido_compra %}
     <p class="fs-5 fst-italic">¿Confirmas que quieres eliminar "{{ object }}"?</p>
     <form method="post">
         {% csrf_token %}
         <div class="d-grid gap-3">
             <button type="submit" class="btn btn-danger">Confirmar</button>
 
-            {% include 'producto/index_back.html' %}
+            {% url 'compra:index' as url %}
+            {% include 'home/index_back.html' with link=url %}
 
         </div>
     </form>
-{% endblock contenido_producto %}
+{% endblock contenido_compra %}

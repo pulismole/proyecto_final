@@ -1,0 +1,51 @@
+{% extends 'compra/list.html' %}
+
+
+{% block titulo %}
+    Lista de compras
+{% endblock titulo %}
+
+{% block search %}
+    <div class="py-lg-4">
+        <form action="{% url 'compra:compra_list' %}" method="get">
+            <input name="consulta" type="text" placeholder="Buscar...">
+        </form>
+    </div>
+{% endblock search %}
+ 
+{% block table_header %}
+    <tr>
+        <th>Cliente</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Fecha</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+{% endblock table_header %}
+ 
+{% block table_body %}
+    {% for compra in object_list %}
+        <tr>
+            <td>{{ compra.cliente }}</td>
+            <td>{{ compra.producto.nombre }}</td>
+            <td>{{ compra.cantidad }}</td>
+            <td>{{ compra.precio_total }}</td>
+            <td>{{ compra.fecha_venta }}</td>
+            <td>
+                <a href="{% url 'compra:compra_detail' compra.id %}"
+                   class="btn btn-secondary btn-sm">Ver detalle</a>
+            </td>
+            <td>
+                <a href="{% url 'compra:compra_update' compra.id %}"
+                   class="btn btn-primary btn-sm">Actualizar</a>
+            </td>
+            <td>
+                <a href="{% url 'compra:compra_delete' compra.id %}"
+                   class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock table_body %}
