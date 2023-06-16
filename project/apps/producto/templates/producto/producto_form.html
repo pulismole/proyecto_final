@@ -8,10 +8,12 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <div class="d-grid gap-3">
+        <div>
             <button type="submit" class="btn btn-success">Crear producto</button>
         </div>
     </form>
+    <br>
     {% url 'producto:index' as url %}
+    <br>
     {% include 'home/index_back.html' with link=url %}
 {% endblock contenido_producto %}

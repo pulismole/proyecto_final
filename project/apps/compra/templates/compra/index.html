@@ -1,24 +1,25 @@
 {% extends 'home/base.html' %}
 
 {% block contenido %}
-    <h1 class="shadow-lg text-center">Registrar compra</h1>
+    
     <div class="container mt-lg-3">
+        
         <h3 class="pb-lg-3">
-
             {% block titulo %}
+                <br>
                 Registrar compra
             {% endblock titulo %}
         </h3>
 
         {% block contenido_compra %}
-            <div class="d-grid gap-3">
-                {% if user.is_staff %}
-                    <a href="{% url 'compra:compra_form' %}" class="btn btn-primary">Registrar</a>
-                {% endif %}
+            <div>
+                <a href="{% url 'compra:compra_form' %}" class="btn btn-outline-primary">Comprar</a>
                 <a href="{% url 'compra:compra_list' %}"
-                   class="btn btn-primary">Listar</a>
+                   class="btn btn-outline-secondary">Listar compras</a>
                 <br>
             </div>
+            <br>
+            <a href="{% url 'home:index' %}" class="btn btn-secondary">Volver al menú principal</a>
         {% endblock contenido_compra %}
     </div>
 {% endblock contenido %}

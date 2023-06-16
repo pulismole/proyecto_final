@@ -1,7 +1,9 @@
 {% extends 'home/base.html' %}
 
 {% block contenido %}
-    <div class="fs-3 fst-italic">
-        <p>Has salido de la sesión</p>
+    <br>
+    <div>
+        <p style="font-size:xx-large">¡Ha salido de la sesión!</p>
+        <a href="{% url 'home:index' %}">Volver a la página principal</a>
     </div>
 {% endblock contenido %}

@@ -15,6 +15,7 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.TextField(null=True)
     categoria = models.ForeignKey(ProductoCategoria, on_delete=models.SET_NULL, null=True)
+    stock = models.PositiveIntegerField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     fecha_vencimiento = models.DateField(null=True)
     fecha_actualizacion = models.DateTimeField(default=timezone.now, editable=False, verbose_name="fecha de actualización")

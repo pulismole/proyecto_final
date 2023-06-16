@@ -27,6 +27,8 @@ class ProductoAdmin(admin.ModelAdmin):
         "nombre",
         "descripcion",
         "categoria",
+        "stock",
+        "precio",
         "fecha_vencimiento",
     )
     list_display_links = ("nombre",)

@@ -1,6 +1,7 @@
 {% extends 'producto/list.html' %}
 
 {% block title %}
+    <br>
     Lista de Productos
 {% endblock title %}
 
@@ -16,7 +17,7 @@
     <tr>
         <th>Producto</th>
         <th>Categoría</th>
-        <th></th>
+        <th>Stock</th>
         <th></th>
         <th></th>
     </tr>
@@ -27,6 +28,7 @@
         <tr>
             <td>{{ producto.nombre }}</td>
             <td>{{ producto.categoria }}</td>
+            <td>{{ producto.stock }}</td>
             <td>
                 <a href="{% url 'producto:producto_detail' producto.id %}"
                    class="btn btn-secondary btn-sm">Ver detalle</a>

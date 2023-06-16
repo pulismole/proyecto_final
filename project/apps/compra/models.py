@@ -1,10 +1,9 @@
-from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils import timezone
 
 class Cliente(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name="cliente")
+    nombre = models.CharField(max_length=50)
     celular = models.CharField(max_length=50)
     avatar = models.ImageField(upload_to="avatars", blank=True, null=True)
 
@@ -13,7 +12,7 @@ class Cliente(models.Model):
         verbose_name_plural = "clientes"
 
     def __str__(self):
-        return f"{self.usuario.username}"
+        return f"{self.nombre}"
 
 
 class Compra(models.Model):
@@ -27,7 +26,7 @@ class Compra(models.Model):
         ordering = ("-fecha_compra",)
 
     def clean(self):
-        if self.cantidad > self.producto.cantidad:
+        if self.cantidad > self.producto.stock:
             raise ValidationError("La cantidad a comprar no puede ser mayor que la cantidad disponible del producto.")
 
     def save(self, *args, **kwargs):

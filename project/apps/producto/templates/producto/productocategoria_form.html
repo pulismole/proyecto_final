@@ -1,6 +1,7 @@
 {% extends 'producto/index.html' %}
 
 {% block titulo %}
+    <br>
     Crear categoría
 {% endblock titulo %}
 
@@ -8,12 +9,13 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <div class="d-grid gap-3">
+        <div>
             <button type="submi" class="btn btn-success">Crear categoría</button>
         </div>
     </form>
 
     {% url 'producto:index' as url %}
+    <br>
     {% include 'home/index_back.html' with link=url %}
 
 {% endblock contenido_producto %}

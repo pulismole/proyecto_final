@@ -27,7 +27,8 @@
                     <li class="nav-item"><a class="nav-link text-info" href="{% url 'home:logout' %}">Logout</a></li>
                 {% else %}
                     <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %}active{% endif %}" href="{% url 'home:about' %}">¿Quién soy?</a></li>
-                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'home:login' %}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'home:login' %}">Iniciar sesión</a></li>
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'home:register' %}">Registrarse</a></li>
                 {% endif %}
             </ul>
         </div>

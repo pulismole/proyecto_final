@@ -6,9 +6,10 @@ from . import views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="compra/index.html"), name="index"),
+    path("compra/create_cliente/", views.ClienteCreate.as_view(), name="cliente_form"),
     path("compra/list/", views.CompraList.as_view(), name="compra_list"),
     path("compra/detail/<int:pk>", views.CompraDetail.as_view(), name="compra_detail"),
-    path("compra/create/", staff_member_required(views.CompraCreate.as_view()), name="compra_create"),
+    path("compra/create/", views.CompraCreate.as_view(), name="compra_form"),
     path("compra/delete/<int:pk>", staff_member_required(views.CompraDelete.as_view()), name="compra_delete"),
     path("compra/update/<int:pk>", staff_member_required(views.CompraUpdate.as_view()), name="compra_update"),
 ]

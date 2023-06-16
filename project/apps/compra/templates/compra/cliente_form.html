@@ -2,7 +2,7 @@
 
 {% block titulo %}
     <br>
-    Registro de compra
+    Registro de cliente
 {% endblock titulo %}
 
 {% block contenido_compra %}
@@ -14,7 +14,7 @@
             <button type="submit" class="btn btn-success">Guardar</button>
         </div>
     </form>
-    {% url 'compra:index' as url %}
+    {% url 'home:index' as url %}
     {% include 'home/index_back.html' with link=url %}
 
 {% endblock contenido_compra %}

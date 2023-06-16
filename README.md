@@ -1,10 +1,10 @@
-# Tercera Entrega
+# Proyecto Final
 
-## La aplicación simula un sistema de gestión de ventas de un supermercado, y tiene las siguientes funcionalidades:
+## La aplicación simula el funcionamiento del sitio web de un supermercado, y tiene las siguientes funcionalidades:
 
-    1. Crear categorías de productos
-    2. Crear productos con su categoría correspondiente
+    1. Crear, actualizar, listar y eliminar categorías de productos
+    2. Crear, actualizar, listar y eliminar productos
     3. Crear clientes
     4. Registrar compras de clientes
 
-En primer lugar se deben crear las categorías de producto (comestibles, bebidas, etc). Una vez que están creadas las categorías, ya se pueden ingresar productos, que van a pertenecer a una de esas categorías (foreign key). Por último, se registran los clientes y se selecciona lo que compró cada uno para que quede guardado en la base de datos.
+Un usuario administrador será el encargado de gestionar la base de productos, modificando o eliminando los mismos, y creando nuevos cuando haga falta. Los clientes que deseen comprar deberán loguearse creando una cuenta para ingresar al sitio, y una vez dentro darse de alta como clientes. Luego, ya podrán ingresar a hacer compras, listar productos o categorías, y consultar sus propias compras.

@@ -1,6 +1,7 @@
 {% extends 'producto/index.html' %}
 
 {% block titulo %}
+    <br>
     Detalle de Productos
 {% endblock titulo %}
 
@@ -15,6 +16,7 @@
     </ul>
 
     {% url 'producto:index' as url %}
+    <br>
     {% include 'home/index_back.html' with link=url %}
 
 {% endblock contenido_producto %}

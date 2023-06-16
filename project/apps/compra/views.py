@@ -8,6 +8,11 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from . import forms, models
 
 
+class ClienteCreate(CreateView):
+    model = models.Cliente
+    form_class = forms.ClienteForm
+    success_url = reverse_lazy("compra:index")
+
 class CompraDetail(DetailView):
     model = models.Compra
 
