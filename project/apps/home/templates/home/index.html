@@ -6,7 +6,7 @@
     {% if user.is_authenticated %}
         <br>
         <h3 class="d-flex align-items-center">Usuario: {{ user.username }}
-            {% if user.cliente.avatar.url %}
+            {% if user.cliente.avatar %}
                 <img src="{{ user.cliente.avatar.url }}" alt="Avatar" style="height: 30px;" /> 
             {% else %}
                 <img src="{% static 'compra/avatares.png' %}" alt="avatar" style="height: 30px;" />

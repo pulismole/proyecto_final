@@ -23,7 +23,7 @@
             <p class="mt-5 fw-semibold text-center">Total: {{ object_list | length }}</p>
         {% endblock list %}
     {% else %}
-        <p class="fs-4 fst-italic">No hay registros ingresados</p>
+        <p style="color:crimson">No hay registros ingresados</p>
     {% endif %}
 
     {% url 'producto:index' as url %}

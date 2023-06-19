@@ -5,8 +5,8 @@ class ProductoCategoria(models.Model):
     nombre = models.CharField(max_length=50)
 
     class Meta:
-        verbose_name = "categoría de productos"
-        verbose_name_plural = "categorías de productos"
+        verbose_name = "categoría de producto"
+        verbose_name_plural = "categorías de producto"
 
     def __str__(self):
         return self.nombre

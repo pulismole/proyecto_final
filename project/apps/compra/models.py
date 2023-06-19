@@ -1,9 +1,10 @@
+from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils import timezone
 
 class Cliente(models.Model):
-    nombre = models.CharField(max_length=50)
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE, related_name="cliente")
     celular = models.CharField(max_length=50)
     avatar = models.ImageField(upload_to="avatars", blank=True, null=True)
 
@@ -12,7 +13,7 @@ class Cliente(models.Model):
         verbose_name_plural = "clientes"
 
     def __str__(self):
-        return f"{self.nombre}"
+        return f"{self.usuario}"
 
 
 class Compra(models.Model):
@@ -24,6 +25,9 @@ class Compra(models.Model):
 
     class Meta:
         ordering = ("-fecha_compra",)
+
+    def __str__(self):
+        return f"Compra {self.id}"
 
     def clean(self):
         if self.cantidad > self.producto.stock:

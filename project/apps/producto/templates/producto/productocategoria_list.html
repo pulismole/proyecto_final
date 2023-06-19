@@ -3,7 +3,7 @@
 
 {% block titulo %}
     <br>
-    Lista de Categorías de Productos
+    Lista de categorías de producto
 {% endblock titulo %}
 
 {% block search %}
@@ -27,10 +27,6 @@
     {% for categoria in object_list %}
         <tr>
             <td>{{ categoria.nombre }}</td>
-            <td>
-                <a href="{% url 'producto:productocategoria_detail' categoria.id %}"
-                   class="btn btn-secondary btn-sm">Ver detalle</a>
-            </td>
             <td>
                 <a href="{% url 'producto:productocategoria_update' categoria.id %}"
                    class="btn btn-primary btn-sm">Actualizar</a>

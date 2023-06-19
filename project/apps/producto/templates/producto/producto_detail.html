@@ -2,7 +2,7 @@
 
 {% block titulo %}
     <br>
-    Detalle de Productos
+    Detalle de producto
 {% endblock titulo %}
 
 {% block contenido_producto %}
@@ -10,6 +10,7 @@
         <li>Nombre: {{ object.nombre }}</li>
         <li>Descripción: {{ object.descripcion }}</li>
         <li>Categoría: {{ object.categoria }}</li>
+        <li>Stock: {{ object.stock }}</li>
         <li>Precio: {{ object.precio }}</li>
         <li>Fecha de vencimiento: {{ object.fecha_vencimiento }}</li>
         <li>Fecha de actualización: {{ object.fecha_actualizacion }}</li>

@@ -10,6 +10,6 @@ urlpatterns = [
     path("compra/list/", views.CompraList.as_view(), name="compra_list"),
     path("compra/detail/<int:pk>", views.CompraDetail.as_view(), name="compra_detail"),
     path("compra/create/", views.CompraCreate.as_view(), name="compra_form"),
-    path("compra/delete/<int:pk>", staff_member_required(views.CompraDelete.as_view()), name="compra_delete"),
-    path("compra/update/<int:pk>", staff_member_required(views.CompraUpdate.as_view()), name="compra_update"),
+    path("compra/delete/<int:pk>", views.CompraDelete.as_view(), name="compra_delete"),
+    path("compra/update/<int:pk>", views.CompraUpdate.as_view(), name="compra_update"),
 ]

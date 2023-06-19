@@ -7,4 +7,6 @@
     3. Crear clientes
     4. Registrar compras de clientes
 
-Un usuario administrador será el encargado de gestionar la base de productos, modificando o eliminando los mismos, y creando nuevos cuando haga falta. Los usuarios que deseen comprar deberán loguearse creando una cuenta para ingresar al sitio, y una vez dentro darse de alta como clientes. Luego, ya podrán ingresar a hacer compras, listar productos o categorías, y ver el detalle de sus propias compras.
+Un usuario administrador será el encargado de gestionar la base de productos, modificando o eliminando los mismos, y creando nuevos cuando haga falta. Los usuarios que deseen comprar deberán loguearse creando una cuenta para ingresar al sitio, y una vez dentro darse de alta como clientes. Luego, ya podrán ingresar a hacer compras, listar productos o categorías, y ver el detalle de sus propias compras, pudiendo incluso editar o modificar las mismas.
+
+## Nombre: Pablo Andrés Smole
